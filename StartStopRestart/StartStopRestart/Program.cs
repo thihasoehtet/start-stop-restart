@@ -12,9 +12,16 @@ namespace StartStopRestart
         {
             Controller c = new Controller();
             c.Start();
-            Console.ReadKey();
-            c.Restart();
-            Console.ReadKey();
+            while (true)
+            {
+                var k = Console.ReadKey();
+                if (k.KeyChar == 'q')
+                {
+                    break;
+                }
+                c.Restart();
+            }
+
         }
     }
 }
