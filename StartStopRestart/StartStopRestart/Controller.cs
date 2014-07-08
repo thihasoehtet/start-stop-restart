@@ -10,7 +10,7 @@ namespace StartStopRestart
     {
         private int _count = 0;
         private Task _job;
-        private bool _isStopped = false;
+        private volatile bool _isStopped = false;
 
         public void Start()
         {
